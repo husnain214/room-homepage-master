@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <script src="./script.js" defer></script>
+
   <title>Frontend Mentor | Room homepage</title>
 </head>
 <body>
@@ -42,9 +44,9 @@
 
   <main class="main-section grid">
     <section class="main-section--row-1 grid">
-      <ul class="main-section--row-1--image-list">
+      <ul class="main-section--row-1--image-list grid">
         <li aria-hidden="false">      
-          <picture class="main-section--row-1__picture">
+          <picture class="main-section--row-1__picture bg-primary-3">
             <source srcset="./images/desktop-image-hero-1.jpg" media="(min-width: 600px)"/>
             <img 
               src="./images/mobile-image-hero-1.jpg" 
@@ -53,13 +55,11 @@
               loading="lazy"
               decoding="async"
               fetchpriority="high"
-              height="400px"
-              width="700px"
             >
           </picture>
         </li>
-        <!-- <li>      
-          <picture class="main-section--row-1__picture">
+        <li aria-hidden="true">
+          <picture class="main-section--row-1__picture bg-primary-3">
             <source srcset="./images/desktop-image-hero-2.jpg" media="(min-width: 600px)"/>
             <img 
               src="./images/mobile-image-hero-2.jpg" 
@@ -68,13 +68,11 @@
               loading="lazy"
               decoding="async"
               fetchpriority="high"
-              height="300"
-              width="500"
             >
           </picture>
         </li>
-        <li>      
-          <picture class="main-section--row-1__picture">
+        <li aria-hidden="true">
+          <picture class="main-section--row-1__picture bg-primary-3">
             <source srcset="./images/desktop-image-hero-3.jpg" media="(min-width: 600px)"/>
             <img 
               src="./images/mobile-image-hero-3.jpg" 
@@ -83,17 +81,16 @@
               loading="lazy"
               decoding="async"
               fetchpriority="high"
-              height="300"
-              width="500"
+
             >
           </picture>
-        </li> -->
+        </li>
       </ul>
 
-      <div class="hero-content-1 grid">
-        <ul class="main-section--article-list">
-          <li>
-            <article class="main-section--article-list__article grid text-primary-4 fs-500" aria-hidden="false">
+      <div class="hero-content-1 bg-primary-1 grid">
+        <ul class="main-section--article-list grid">
+          <li aria-hidden="false">
+            <article class="main-section--article-list__article bg-primary-1 grid text-primary-4 fs-500">
               <h1 class="article-title fs-700 fw-700">Discover innovative ways to decorate</h1>
               <p class="subtitle text-primary-3 fw-500">We provide unmatched quality, comfort, and style for property owners across the country. 
                 Our experts combine form and function in bringing your vision to life. Create a room in your 
@@ -113,32 +110,56 @@
               </button>
             </article>
           </li>
-          <!-- <li>
-            <article class="main-section--article-list__article">
-              <h1 class="article-title">We are available all across the globe</h1>
-              <p class="subtitle">With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+          <li aria-hidden="true">
+            <article class="main-section--article-list__article bg-primary-1 grid text-primary-4 fs-500">
+              <h1 class="article-title fs-700 fw-700">We are available all across the globe</h1>
+              <p class="subtitle text-primary-3 fw-500">With stores all over the world, it's easy for you to find furniture for your home or place of business. 
                 Locally, we're in most major cities throughout the country. Find the branch nearest you using our 
                 store locator. Any questions? Don't hesitate to contact us today.</p>
-              <button>Shop now</button>
+              <button class="shop-btn bg-primary-1 flex fw-600 uppercase letter-spacing-200">
+                <span>Shop now</span> 
+                <img 
+                  src="./images/icon-arrow.svg" 
+                  alt="shop now arrow icon"
+                  role="img"
+                  height="15"
+                  width="60"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                >
+              </button>
             </article>
           </li>
-          <li>
-            <article class="main-section--article-list__article">
-              <h1 class="article-title">Manufactured with the best materials</h1>
-              <p class="subtitle">Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+          <li aria-hidden="true">
+            <article class="main-section--article-list__article grid bg-primary-1 text-primary-4 fs-500">
+              <h1 class="article-title fs-700 fw-700">Manufactured with the best materials</h1>
+              <p class="subtitle text-primary-3 fw-500">Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
                 to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-                experience in this industry, we understand what customers want for their home and office.</p>
-              <button>Shop now</button>
+                experience in this industry, we understand what customers want for their home and office</p>
+              <button class="shop-btn bg-primary-1 flex fw-600 uppercase letter-spacing-200">
+                <span>Shop now</span> 
+                <img 
+                  src="./images/icon-arrow.svg" 
+                  alt="shop now arrow icon"
+                  role="img"
+                  height="15"
+                  width="60"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                >
+              </button>
             </article>
-          </li> -->
+          </li>
         </ul>
 
         <div class="main-section--hero-content-1--arrow-buttons grid">
-          <button class="main-section--hero-content-1--arrow-buttons__left-btn bg-primary-4">
+          <button class="main-section--hero-content-1--arrow-buttons__left-btn bg-primary-4" id="leftBtn" onclick="handleLeftBtn()">
             <img src="./images/icon-angle-left.svg" />
           </button>
 
-          <button class="main-section--hero-content-1--arrow-buttons__right-btn bg-primary-4">
+          <button class="main-section--hero-content-1--arrow-buttons__right-btn bg-primary-4" id="rightBtn" onclick="handleRightBtn()">
             <img src="./images/icon-angle-right.svg" />
           </button>
         </div>
@@ -146,7 +167,7 @@
     </section>
 
     <section class="main-section--row-2 grid">
-      <picture>
+      <picture class="bg-primary-3">
         <img 
           src="./images/image-about-dark.jpg" 
           alt="picture of furniture"
@@ -157,7 +178,7 @@
         />
       </picture>
 
-      <div class="hero-content-2 grid fs-500 fw-500">
+      <div class="hero-content-2 bg-primary-1 grid fs-500 fw-500">
         <h3 class="article-title text-primary-4 fs-600 fw-600 letter-spacing-100 uppercase">About our furniture</h3>
         <p class="subtitle text-primary-3">Our multifunctional collection blends design and function to suit your individual taste.
           Make each room unique, or pick a cohesive theme that best express your interests and what
@@ -165,7 +186,7 @@
           or anything in between. Product specialists are available to help you create your dream space.</p>
       </div>
 
-      <picture>
+      <picture class="bg-primary-3">
         <img 
           src="./images/image-about-light.jpg" 
           alt="picture of furniture"

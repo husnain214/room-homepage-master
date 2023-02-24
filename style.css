@@ -33,6 +33,8 @@ ul { list-style: none; }
 
 button { all: unset;  cursor: pointer; }
 
+*:focus-visible { outline:2px solid hsl(0, 0%, 0%); }
+
 a { text-decoration: none; }
 
 button, a { font: inherit; color: inherit; }
@@ -68,9 +70,7 @@ button, a { font: inherit; color: inherit; }
 .letter-spacing-200 { letter-spacing: 15px; }
 .letter-spacing-100 { letter-spacing: 10px; }
 
-:where(h1, h2, h3) + p {
-  line-height: 1.5625rem;
-}
+:where(h1, h2, h3) + p { line-height: 1.5625rem; }
 
 header.flex {
   position: fixed;
@@ -78,9 +78,26 @@ header.flex {
   padding: 3em 4em;
   align-items: center;
   gap: 3em;
+  z-index: 1;
 }
 
 .navigation--nav-list.flex { gap: 2em; }
+.navigation--nav-list__nav-item { position: relative; padding: .5em 0; }
+
+.navigation--nav-list__nav-item::before {
+  content: '';
+  height: 3px;
+  width: 0;
+  position: absolute;
+  translate: -50%;
+  left: 50%;
+  bottom: 0;
+  border-radius: 100px;
+  transition: width 100ms ease-in;
+  background-color: var(--clr-primary-1);
+}
+
+.navigation--nav-list__nav-item:where(:hover, :focus)::before { width: 15px; }
 
 .main-section--row-1.grid {
   grid-template-columns: 1.5fr 1fr;
@@ -112,9 +129,7 @@ header.flex {
   transition: opacity 150ms ease-in;
 }
 
-.shop-btn:hover {
-  opacity: 0.6;
-}
+.shop-btn:where(:hover, :focus) { opacity: 0.6; }
 
 .main-section--hero-content-1--arrow-buttons.grid {
   grid-template-columns: 1fr 1fr;
@@ -131,13 +146,12 @@ header.flex {
   opacity: 1;
 }
 
-.main-section--hero-content-1--arrow-buttons button:hover {
-  opacity: 0.8;
+.main-section--hero-content-1--arrow-buttons button:where(:hover, :focus, :focus-visible) { 
+  opacity: 0.8; 
+  outline-color: transparent; 
 }
 
-.main-section--row-2.grid { 
-  grid-template-columns: 1fr 1.5fr 1fr;
-}
+.main-section--row-2.grid { grid-template-columns: 1fr 1.5fr 1fr; }
 
 .main-section--row-2 img { 
   object-fit: cover; 
@@ -149,6 +163,18 @@ header.flex {
   padding: 3em;
 }
 
+:where(.main-section--row-1--image-list, .main-section--article-list) { gap: 0; overflow: hidden; }
+
+:where(.main-section--row-1--image-list, .main-section--article-list) li { transition: opacity 300ms; }
+
+:where(.main-section--row-1--image-list, .main-section--article-list) li[aria-hidden="false"] { opacity: 1; }
+
+:where(.main-section--row-1--image-list, .main-section--article-list) li[aria-hidden="true"] { opacity: 0; }
+
+:where(.main-section--row-1--image-list, .main-section--article-list) li {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
 
 
 
