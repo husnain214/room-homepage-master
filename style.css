@@ -1,0 +1,154 @@
+:root {
+  --clr-primary-4: hsl(0, 0%, 0%);
+  --clr-primary-3: hsl(0, 0%, 27%);
+  --clr-primary-2: hsl(0, 0%, 63%);
+  --clr-primary-1: hsl(0, 0%, 100%);
+  
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+
+  --fs-700: 2.5rem;
+  --fs-600: 1.3rem;
+  --fs-500: .9rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'League Spartan', sans-serif;
+}
+
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul { list-style: none; }
+
+button { all: unset;  cursor: pointer; }
+
+a { text-decoration: none; }
+
+button, a { font: inherit; color: inherit; }
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid { display: grid; }
+
+.bg-primary-4 { background-color: var(--clr-primary-4); } 
+.bg-primary-3 { background-color: var(--clr-primary-3); } 
+.bg-primary-2 { background-color: var(--clr-primary-2); } 
+.bg-primary-1 { background-color: var(--clr-primary-1); } 
+
+.text-primary-4 { color: var(--clr-primary-4); } 
+.text-primary-3 { color: var(--clr-primary-3); } 
+.text-primary-2 { color: var(--clr-primary-2); } 
+.text-primary-1 { color: var(--clr-primary-1); } 
+
+.fw-700 { font-weight: 700; }
+.fw-600 { font-weight: 600; }
+.fw-500 { font-weight: 500; }
+
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+
+.letter-spacing-200 { letter-spacing: 15px; }
+.letter-spacing-100 { letter-spacing: 10px; }
+
+:where(h1, h2, h3) + p {
+  line-height: 1.5625rem;
+}
+
+header.flex {
+  position: fixed;
+  width: 100%;
+  padding: 3em 4em;
+  align-items: center;
+  gap: 3em;
+}
+
+.navigation--nav-list.flex { gap: 2em; }
+
+.main-section--row-1.grid {
+  grid-template-columns: 1.5fr 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.main-section--row-1__picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content-1.grid {
+  position: relative;
+  align-content: center;
+  padding: 4em 4em 7em 4em;
+}
+
+.main-section--article-list__article,
+.hero-content-2 { 
+  gap: 2rem;
+  justify-items: start;
+}
+
+.shop-btn {
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 150ms ease-in;
+}
+
+.shop-btn:hover {
+  opacity: 0.6;
+}
+
+.main-section--hero-content-1--arrow-buttons.grid {
+  grid-template-columns: 1fr 1fr;
+  align-content: stretch;
+  max-width: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.main-section--hero-content-1--arrow-buttons button {
+  padding: 1.5em 1.98em;
+  transition: opacity 200ms ease-in;
+  opacity: 1;
+}
+
+.main-section--hero-content-1--arrow-buttons button:hover {
+  opacity: 0.8;
+}
+
+.main-section--row-2.grid { 
+  grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.main-section--row-2 img { 
+  object-fit: cover; 
+  height: 100%;
+}
+
+.hero-content-2.grid {
+  gap: 1em;
+  padding: 3em;
+}
+
+
+
+
