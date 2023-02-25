@@ -33,15 +33,28 @@
     </div>
 
     <nav class="navigation">
-      <button class="hamburger-btn" aria-expanded="true" id="hamburgerBtn">
-        <img src="./images/icon-hamburger.svg" role="svg" alt="hamburger menu icon" height="18" width="25">
+      <button 
+        class="mobileNavToggle" 
+        aria-hidden="true" 
+        aria-expanded="false" 
+        aria-controls="navigation" 
+        id="mobileNavToggle"
+        >
+        <img 
+          src="./images/icon-hamburger.svg" 
+          aria-hidden="true" 
+          role="svg" 
+          alt="hamburger menu icon" 
+          height="18" 
+          width="25"
+        />
       </button>
 
-      <ul class="navigation--nav-list flex" role="list">
-        <li class="navigation--nav-list__nav-item fs-100 fw-500 text-primary-1 lowercase" role="listitem"><a href="#">Home</a></li>
-        <li class="navigation--nav-list__nav-item fs-100 fw-500 text-primary-1 lowercase" role="listitem"><a href="#">Shop</a></li>
-        <li class="navigation--nav-list__nav-item fs-100 fw-500 text-primary-1 lowercase" role="listitem"><a href="#">About</a></li>
-        <li class="navigation--nav-list__nav-item fs-100 fw-500 text-primary-1 lowercase" role="listitem"><a href="#">Contact</a></li>
+      <ul class="navigation--nav-list flex" role="list" id="navigation">
+        <li class="navigation--nav-list__nav-item fs-100 fw-500 lowercase" role="listitem"><a href="#">Home</a></li>
+        <li class="navigation--nav-list__nav-item fs-100 fw-500 lowercase" role="listitem"><a href="#">Shop</a></li>
+        <li class="navigation--nav-list__nav-item fs-100 fw-500 lowercase" role="listitem"><a href="#">About</a></li>
+        <li class="navigation--nav-list__nav-item fs-100 fw-500 lowercase" role="listitem"><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
