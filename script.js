@@ -1,8 +1,6 @@
-const imageList = document.querySelector('.main-section--row-1--image-list')
-const articleList = document.querySelector('.main-section--article-list')
-
-const imageListItems = imageList.children
-const articleListItems = articleList.children
+const imageListItems = [...document.querySelectorAll('.main-section--image-list li')]
+const articleListItems = [...document.querySelectorAll('.hero-content-1--article-list li')]
+const hamburgerBtn = document.querySelector('#hamburgerBtn')
 
 let counter = 0
 
@@ -25,3 +23,8 @@ function handleLeftBtn() {
   imageListItems[counter].setAttribute('aria-hidden', 'false')
   articleListItems[counter].setAttribute('aria-hidden', 'false')
 }
+
+hamburgerBtn.addEventListener('click', e => {
+  e.target.setAttribute('aria-expanded', 'true') 
+})
+
