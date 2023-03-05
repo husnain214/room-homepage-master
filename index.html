@@ -23,12 +23,11 @@
           src="./images/logo.svg" 
           alt="image link to go back to homepage" 
           class="header-section--nav-brand__logo"
-          role="img"
           height="20"
           width="80"
           fetchpriority="high"
           decoding="sync"
-        />
+        >
       </a>
     </div>
 
@@ -43,11 +42,10 @@
         <img 
           src="./images/icon-hamburger.svg" 
           aria-hidden="true" 
-          role="svg" 
           alt="hamburger menu icon" 
           height="18" 
           width="25"
-        />
+        >
       </button>
 
       <ul class="navigation--nav-list flex" role="list" id="navigation">
@@ -60,42 +58,35 @@
   </header>
 
   <main class="main-section grid">
-    <ul class="main-section--image-list bg-primary-3 grid">
-      <li aria-hidden="false">      
+    <ul class="main-section--image-list bg-primary-3 grid" role="list" id="imageList" aria-label="image-slider">
+      <li aria-hidden="false" role="listitem">      
         <picture class="main-section__picture bg-primary-3">
-          <source srcset="./images/desktop-image-hero-1.jpg" media="(min-width: 600px)"/>
+          <source srcset="./images/desktop-image-hero-1.jpg" media="(min-width: 600px)" >
           <img 
             src="./images/mobile-image-hero-1.jpg" 
             alt="picture of furniture" 
-            role="presentation"
-            loading="lazy"
             decoding="async"
             fetchpriority="high"
           >
         </picture>
       </li>
-      <li aria-hidden="true">
+      <li aria-hidden="true" role="listitem">
         <picture class="main-section__picture bg-primary-3">
-          <source srcset="./images/desktop-image-hero-2.jpg" media="(min-width: 600px)"/>
+          <source srcset="./images/desktop-image-hero-2.jpg" media="(min-width: 600px)" >
           <img 
             src="./images/mobile-image-hero-2.jpg" 
             alt="picture of furniture" 
-            role="presentation"
-            loading="lazy"
             decoding="async"
             fetchpriority="high"
           >
         </picture>
       </li>
-      <li aria-hidden="true">
+      <li aria-hidden="true" role="listitem">
         <picture class="main-section__picture bg-primary-3">
-          <source srcset="./images/desktop-image-hero-3.jpg" media="(min-width: 600px)"/>
+          <source srcset="./images/desktop-image-hero-3.jpg" media="(min-width: 600px)" >
           <img 
             src="./images/mobile-image-hero-3.jpg" 
-            alt="picture of furniture" 
-            role="presentation"
-            loading="lazy"
-            decoding="async"
+            alt="picture of furniture"            decoding="async"
             fetchpriority="high"
           >
         </picture>
@@ -103,18 +94,30 @@
     </ul>
 
     <div class="main-section--arrow-buttons grid">
-      <button class="main-section--hero-content-1--arrow-buttons__left-btn bg-primary-4" id="leftBtn" onclick="handleLeftBtn()">
-        <img src="./images/icon-angle-left.svg" />
+      <button class="main-section--hero-content-1--arrow-buttons__left-btn bg-primary-4" 
+        aria-label="next button" 
+        aria-description="shows the next item in image-list and article-list"
+        aria-controls="imageList articleList"
+        id="leftBtn" 
+        onclick="handleLeftBtn()"
+        >
+        <img src="./images/icon-angle-left.svg" aria-hidden="true" alt="left arrow icon" >
       </button>
 
-      <button class="main-section--hero-content-1--arrow-buttons__right-btn bg-primary-4" id="rightBtn" onclick="handleRightBtn()">
-        <img src="./images/icon-angle-right.svg" />
+      <button class="main-section--hero-content-1--arrow-buttons__right-btn bg-primary-4" 
+        aria-label="previous button"
+        aria-description="shows the previous item in image-list and article-list"
+        aria-controls="imageList articleList"
+        id="rightBtn" 
+        onclick="handleRightBtn()"
+        >
+        <img src="./images/icon-angle-right.svg" aria-hidden="true" alt="right arrow icon" >
       </button>
     </div>
 
     <div class="main-section--hero-content-1 bg-primary-1 grid">
-      <ul class="hero-content-1--article-list grid">
-        <li aria-hidden="false">
+      <ul class="hero-content-1--article-list grid" role="list" id="articleList">
+        <li aria-hidden="false" role="listitem">
           <article class="hero-content-1--article-list__article bg-primary-1 grid text-primary-4 fs-500">
             <h1 class="article-title fs-700 fw-700">Discover innovative ways to decorate</h1>
             <p class="subtitle text-primary-3 fw-500">We provide unmatched quality, comfort, and style for property owners across the country. 
@@ -125,17 +128,15 @@
               <img 
                 src="./images/icon-arrow.svg" 
                 alt="shop now arrow icon"
-                role="img"
                 height="15"
                 width="60"
-                loading="lazy"
                 decoding="async"
                 fetchpriority="low"
               >
             </button>
           </article>
         </li>
-        <li aria-hidden="true">
+        <li aria-hidden="true" role="listitem">
           <article class="hero-content-1--article-list__article bg-primary-1 grid text-primary-4 fs-500">
             <h1 class="article-title fs-700 fw-700">We are available all across the globe</h1>
             <p class="subtitle text-primary-3 fw-500">With stores all over the world, it's easy for you to find furniture for your home or place of business. 
@@ -146,17 +147,15 @@
               <img 
                 src="./images/icon-arrow.svg" 
                 alt="shop now arrow icon"
-                role="img"
                 height="15"
                 width="60"
-                loading="lazy"
                 decoding="async"
                 fetchpriority="low"
               >
             </button>
           </article>
         </li>
-        <li aria-hidden="true">
+        <li aria-hidden="true" role="listitem">
           <article class="hero-content-1--article-list__article grid bg-primary-1 text-primary-4 fs-500">
             <h1 class="article-title fs-700 fw-700">Manufactured with the best materials</h1>
             <p class="subtitle text-primary-3 fw-500">Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
@@ -167,10 +166,8 @@
               <img 
                 src="./images/icon-arrow.svg" 
                 alt="shop now arrow icon"
-                role="img"
                 height="15"
                 width="60"
-                loading="lazy"
                 decoding="async"
                 fetchpriority="low"
               >
@@ -184,15 +181,15 @@
       <img 
         src="./images/image-about-dark.jpg" 
         alt="picture of furniture"
-        role="presentation"
-        loading="lazy"
         decoding="async"
         fetchpriority="low"
-      />
+        height="100"
+        width="50"
+      >
     </picture>
 
     <div class="main-section--hero-content-2 bg-primary-1 grid fs-500 fw-500">
-      <h3 class="article-title text-primary-4 fs-600 fw-600 letter-spacing-100 uppercase">About our furniture</h3>
+      <h3 class="article-title text-primary-4 fs-600 fw-700 letter-spacing-100 uppercase">About our furniture</h3>
       <p class="subtitle text-primary-3">Our multifunctional collection blends design and function to suit your individual taste.
         Make each room unique, or pick a cohesive theme that best express your interests and what
         inspires you. Find the furniture pieces you need, from traditional to contemporary styles
@@ -203,11 +200,11 @@
       <img 
         src="./images/image-about-light.jpg" 
         alt="picture of furniture"
-        role="presentation"
-        loading="lazy"
         decoding="async"
         fetchpriority="low"
-      />
+        height="100"
+        width="50"
+      >
     </picture>
   </main>
 

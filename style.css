@@ -8,9 +8,9 @@
   --fw-600: 600;
   --fw-500: 500;
 
-  --fs-700: 2.5rem;
-  --fs-600: 1.3rem;
-  --fs-500: clamp(1.1rem, 1.05rem ,1rem);
+  --fs-700: clamp(2rem, 5vw, 2.5rem);
+  --fs-600: clamp(1.2rem, 3vw, 1.3rem);
+  --fs-500: 1rem;
 }
 
 *, *::before, *::after {
@@ -151,8 +151,15 @@ button :where(img, svg) { pointer-events: none; }
   .main-section--hero-content-2 { grid-area: 2 / 3 / 3 / 7; }
   
   .main-section--picture:nth-of-type(2) { grid-area: 2 / 7 / 3 / 9; } 
-}
 
+  .main-section--picture :where(picture, img) {
+    aspect-ratio: 2 / 1;
+  }
+  
+  .main-section--image-list :where(picture, img) {
+    aspect-ratio: 16 / 9.2;
+  }
+}
 
 :where(.main-section--picture,  .main-section--image-list) :where(picture, img) {
   object-fit: cover;
@@ -161,8 +168,8 @@ button :where(img, svg) { pointer-events: none; }
 }
 
 .main-section--hero-content-1.grid {
-  align-content: center;
-  padding: 4em 4em 7em 4em;
+  align-content: start;
+  padding: 5em 4em 6em 4em;
 }
 
 .hero-content-1--article-list__article,
@@ -204,8 +211,9 @@ button :where(img, svg) { pointer-events: none; }
 }
 
 .main-section--hero-content-2.grid {
-  gap: 1em;
-  padding: clamp(4em, 5vw, 3em);
+  gap: 2em;
+  align-content: center;
+  padding-inline: clamp(2em, 3vw, 3em);
 }
 
 .main-section--image-list, .hero-content-1--article-list { gap: 0; }
@@ -245,6 +253,7 @@ button :where(img, svg) { pointer-events: none; }
     transition: all 250ms ease;
 
     justify-content: flex-end;
+    gap: .8em;
     width: 100%;
     
     --list-color: var(--clr-primary-4);
