@@ -169,7 +169,7 @@ button :where(img, svg) { pointer-events: none; }
 
 .main-section--hero-content-1.grid {
   align-content: start;
-  padding: 5em 4em 6em 4em;
+  padding: 6em 4em 8em 4em;
 }
 
 .hero-content-1--article-list__article,
