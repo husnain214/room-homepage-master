@@ -8,7 +8,7 @@
   --fw-600: 600;
   --fw-500: 500;
 
-  --fs-700: clamp(2rem, 5vw, 2.5rem);
+  --fs-700: clamp(2rem, 5vw, 2.6rem);
   --fs-600: clamp(1.2rem, 3vw, 1.3rem);
   --fs-500: 1rem;
 }
@@ -34,7 +34,7 @@ ul { list-style: none; }
 
 button { all: unset;  cursor: pointer; }
 
-*:focus-visible { 
+:focus-visible { 
   outline-offset: 1rem;  
 	outline: dotted;
 }
@@ -107,13 +107,16 @@ button :where(img, svg) { pointer-events: none; }
 
 .mobileNavToggle {
   position: absolute;
-  z-index: 50;
-  padding: 1em;
   top: 1.9rem;
   left: 1.5rem;
-  z-index: 5;
+  z-index: 50;
+
+  padding: 1em;
   display: none;
+  transition: top 200ms;
 }
+
+.mobileNavToggle[aria-expanded='true'] { top: 1.6rem; }
 
 .navigation:has(.mobileNavToggle[aria-expanded='true']) > .navigation--nav-list.flex { translate: 0; }  
 
@@ -123,10 +126,12 @@ button :where(img, svg) { pointer-events: none; }
   content: '';
   height: 3px;
   width: 0;
+
   position: absolute;
   translate: -50%;
   left: 50%;
   bottom: 0;
+
   border-radius: 100px;
   transition: width 100ms ease-in;
   background-color: var(--list-color);
@@ -169,7 +174,7 @@ button :where(img, svg) { pointer-events: none; }
 
 .main-section--hero-content-1.grid {
   align-content: start;
-  padding: 6em 4em 8em 4em;
+  padding: clamp(4em, 3vw, 6em) clamp(2em, 3vw, 4em) clamp(3em, 5vw, 8em) clamp(2em, 3vw, 4em);
 }
 
 .hero-content-1--article-list__article,
@@ -188,8 +193,6 @@ button :where(img, svg) { pointer-events: none; }
 
 .shop-btn:where(:hover, :focus) { opacity: 0.6; }
 
-.shop-btn:focus-visible { outline: transparent; }
-
 .shop-btn:where(:hover, :focus) img { translate: 10px; }
 
 .main-section--arrow-buttons.grid {
@@ -200,12 +203,12 @@ button :where(img, svg) { pointer-events: none; }
 }
 
 .main-section--arrow-buttons button {
-  padding: 1.5em 1.98em;
+  padding: clamp(1.3em, 3vw, 1.5em) clamp(1.5em, 5vw, 1.98em);
   transition: opacity 200ms ease-in;
   opacity: 1;
 }
 
-.main-section--arrow-buttons button:where(:hover, :focus-visible) { 
+.main-section--arrow-buttons button:hover { 
   opacity: 0.8; 
   outline-color: transparent; 
 }
@@ -213,7 +216,7 @@ button :where(img, svg) { pointer-events: none; }
 .main-section--hero-content-2.grid {
   gap: 2em;
   align-content: center;
-  padding-inline: clamp(2em, 3vw, 3em);
+  padding: clamp(2em, 3vw, 3em);
 }
 
 .main-section--image-list, .hero-content-1--article-list { gap: 0; }
@@ -243,6 +246,7 @@ button :where(img, svg) { pointer-events: none; }
 
   .header-section.flex {
     justify-content: center;
+    gap: 0;
   }
 
   .navigation--nav-list.flex {
@@ -263,11 +267,7 @@ button :where(img, svg) { pointer-events: none; }
     z-index: 3;
   }
 
-  .main-section--arrow-buttons, .main-section--image-list { 
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: auto;
-  }
+  .main-section--arrow-buttons, .main-section--image-list { grid-area: 1 / 1 / auto / auto; }
   
   .main-section--arrow-buttons.grid {
     justify-self: baseline;
