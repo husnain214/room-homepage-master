@@ -107,7 +107,7 @@ button :where(img, svg) { pointer-events: none; }
 
 .mobileNavToggle {
   position: absolute;
-  top: 1.9rem;
+  top: 2rem;
   left: 1.5rem;
   z-index: 50;
 
@@ -116,7 +116,7 @@ button :where(img, svg) { pointer-events: none; }
   transition: top 200ms;
 }
 
-.mobileNavToggle[aria-expanded='true'] { top: 1.6rem; }
+.mobileNavToggle[aria-expanded='true'] { top: 1.7rem; }
 
 .navigation:has(.mobileNavToggle[aria-expanded='true']) > .navigation--nav-list.flex { translate: 0; }  
 
@@ -158,7 +158,7 @@ button :where(img, svg) { pointer-events: none; }
   .main-section--picture:nth-of-type(2) { grid-area: 2 / 7 / 3 / 9; } 
 
   .main-section--picture :where(picture, img) {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 20 / 15;
   }
   
   .main-section--image-list :where(picture, img) {
@@ -174,7 +174,7 @@ button :where(img, svg) { pointer-events: none; }
 
 .main-section--hero-content-1.grid {
   align-content: start;
-  padding: clamp(4em, 3vw, 6em) clamp(2em, 3vw, 4em) clamp(3em, 5vw, 8em) clamp(2em, 3vw, 4em);
+  padding: clamp(4em, 5vw, 7em) clamp(2em, 3vw, 4em) clamp(3em, 6vw, 8em) clamp(2em, 4vw, 4em);
 }
 
 .hero-content-1--article-list__article,
@@ -201,6 +201,8 @@ button :where(img, svg) { pointer-events: none; }
   align-self: self-end;
   justify-self: stretch;
 }
+
+.main-section--arrow-buttons button.grid { place-items: center; }
 
 .main-section--arrow-buttons button {
   padding: clamp(1.3em, 3vw, 1.5em) clamp(1.5em, 5vw, 1.98em);
